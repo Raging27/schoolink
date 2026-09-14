@@ -1,67 +1,81 @@
-<h1 align="center">
-🎓 Schoolink
-Bridging the Communication Gap Between Teachers and Parents
+# Schoolink
 
-</h1>
-<br>
+**A role-based communication and grade-management platform connecting teachers and parents.**
 
+Schoolink was built by a four-person team during Le Wagon's full-stack web development bootcamp. Teachers can manage student results and communicate with parents, while parents receive a focused view of grades, exam documents, and conversations.
 
+## Product overview
 
-## 💻 Technology Stack
+| Teacher workflow | Parent workflow |
+| --- | --- |
+| View assigned classes and students | View linked children and results |
+| Add grades and exam information | Review grades, averages, and feedback |
+| Share exam documents | Access uploaded exam material |
+| Start direct conversations with parents | Contact the relevant teachers |
 
-<ul>
-<li><strong>Framework</strong>: Ruby on Rails v7.1.3.2</li>
-<li><strong>Languages</strong>: Ruby v3.1, JavaScript ES6</li>
-<li><strong>Frontend</strong>: HTML5, CSS3</li>
-<li><strong>Deployment</strong>: Heroku</li>
-</ul>
+## Engineering highlights
 
-## ✨ Key Features
+- Separate teacher and parent experiences using role-aware Rails routes and user types
+- Authentication and account recovery with Devise
+- Relational domain model covering users, sections, courses, grades, chatrooms, and messages
+- Direct teacher-parent messaging with read-state tracking
+- File and image handling through Active Storage and Cloudinary
+- Team delivery using feature branches and pull requests
 
-### 🔐 Authentication
-<ul>
-<li><strong>Devise Integration</strong>: Ensures secure and reliable access control.</li>
-</ul>
+## Stack
 
-### 📞 Real-Time Communication
-<ul>
-<li><strong>Instant Messaging</strong>: Facilitates direct and instant communication between teachers and parents.</li>
-</ul>
+- Ruby 3.1.2 and Rails 7.1
+- PostgreSQL
+- Hotwire: Turbo and Stimulus
+- Devise
+- Active Storage and Cloudinary
+- Bootstrap 5, HTML, CSS, and JavaScript
+- Heroku
 
-### 📘 Teacher Features
-<ul>
-<li><strong>Exam Results</strong>: Upload and share results effortlessly.</li>
-<li><strong>Classroom Ratings</strong>: Rate and review classroom environments and interactions.</li>
-</ul>
+## Screenshots
 
-### 🏫 Parent Features
-<ul>
-<li><strong>Grades Overview</strong>: Access comprehensive views of grades and averages.</li>
-<li><strong>Exam Downloads</strong>: Conveniently download exam materials.</li>
-</ul>
+### Teacher dashboard
 
-## 👥 Contributors
+![Schoolink teacher dashboard](https://github.com/Raging27/schoolink/assets/100428479/19231ed5-e186-4abe-96ec-09a7b68301cb)
 
-<ul>
-<li><strong>Olivia Rochat</strong></li>
-<li><strong>Omar Haizoun</strong></li>
-<li><strong>Mustafa Arslan</strong></li>
-<li><strong>Ronan Kervella</strong></li>
+### Teacher-parent messaging
 
-</ul>
+![Schoolink chat](https://github.com/Raging27/schoolink/assets/100428479/db58ebb6-3012-4a15-9f48-8c40678c9c45)
 
+### Class averages
 
+![Schoolink class averages](https://github.com/Raging27/schoolink/assets/100428479/74a5a16f-5a33-415d-83c7-7f7e12e652a4)
 
-![schoolink_dashboard_teacher](https://github.com/Raging27/schoolink/assets/100428479/19231ed5-e186-4abe-96ec-09a7b68301cb)
+### Grade details
 
+![Schoolink grade details](https://github.com/Raging27/schoolink/assets/100428479/f704101e-65f2-48bb-a75d-a13e2715005f)
 
-![chat](https://github.com/Raging27/schoolink/assets/100428479/db58ebb6-3012-4a15-9f48-8c40678c9c45)
+## Run locally
 
-![class_average](https://github.com/Raging27/schoolink/assets/100428479/74a5a16f-5a33-415d-83c7-7f7e12e652a4)
+### Requirements
 
-![grade_details](https://github.com/Raging27/schoolink/assets/100428479/f704101e-65f2-48bb-a75d-a13e2715005f)
+- Ruby 3.1.2
+- PostgreSQL
 
+### Setup
 
+```bash
+git clone https://github.com/Raging27/schoolink.git
+cd schoolink
+bundle install
+bin/rails db:create db:migrate db:seed
+bin/rails server
+```
 
+Open `http://localhost:3000`.
 
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Environment variables may be required for Cloudinary-backed media.
+
+## Team
+
+- Olivia Rochat
+- Omar Haizoun
+- Mustafa Arslan
+- Ronan Kervella
+
+Built during [Le Wagon](https://www.lewagon.com).
